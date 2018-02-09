@@ -13,15 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
-import {ApiAiConstants} from "./ApiAiConstants";
+
+import {ApiAiConstants} from './ApiAiConstants';
 
 export interface IRequestOptions {
     query?: string;
     event?: {name: string, data?: IStringMap};
     sessionId?: string;
     lang?: ApiAiConstants.AVAILABLE_LANGUAGES;
-    originalRequest?: {source: string, data?: IStringMap};
 }
 
 export interface IServerResponse {
@@ -32,6 +31,16 @@ export interface IServerResponse {
         speech: string;
         fulfillment?: {
             speech: string
+        },
+        contexts?: [string],
+        parameters?: {
+            [index: string]: string;
+        },
+        metadata?: {
+            intentId: string,
+            intentName: string,
+            webhookForSlotFillingUsed: boolean,
+            webhookUsed: boolean,
         }
     };
     status: {

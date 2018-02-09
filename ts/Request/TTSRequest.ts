@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
- 
+
 import {ApiAiClient} from "../ApiAiClient";
 import {ApiAiConstants} from "../ApiAiConstants";
 import {ApiAiClientConfigurationError, ApiAiRequestError} from "../Errors";
@@ -30,8 +30,8 @@ export class TTSRequest extends Request {
   constructor(protected apiAiClient: ApiAiClient, options: IRequestOptions = {}) {
     super(apiAiClient, options);
     // this.requestMethod = XhrRequest.Method.GET;
-    this.uri = ApiAiConstants.DEFAULT_TTS_HOST;
-    const AudioContext = window.AudioContext || webkitAudioContext;
+    // this.uri = ApiAiConstants.DEFAULT_TTS_HOST;
+    // const AudioContext = window.AudioContext || webkitAudioContext;
 
     if (!TTSRequest.audioContext) {
       TTSRequest.audioContext = new AudioContext();
